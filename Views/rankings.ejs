@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- title of site -->
+    <title>Global Street</title>
+
+    <!-- For favicon png -->
+    <link rel="shortcut icon" type="image/icon" href="/img/logo_head.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-body">
+            <!-- Breadcrumb -->
+            <a href="/" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-white">
+                <i class="fa fa-home"></i>
+            </a>
+            <a href="/profile" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-white">
+                <i class="fa fa-user"></i>
+            </a>
+            <a href=# class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-white">
+                <i class="fa fa-trophy"></i>
+            </a>
+            <a href="/skills" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-white">
+                <i class="fa fa-bar-chart"></i> 
+            </a>
+            <!-- /Breadcrumb -->
+            <h1></h1>
+            <button class="btn btn-primary" onclick="showGlobalRanking()">Global Ranking</button>
+            <button class="btn btn-primary" onclick="showFriendsRanking()">Friends Ranking</button>
+
+            <div id="globalRanking"></div>
+        </div>
+    </div>
+
+    <script>
+        function showGlobalRanking() {
+            var globalRanking = [
+                { name: "John", score: 100 },
+                { name: "Jane", score: 95 },
+                { name: "Mike", score: 90 },
+                { name: "Emily", score: 85 },
+                { name: "David", score: 80 }
+            ];
+
+            var globalRankingHtml = "<h2>Global Ranking</h2>";
+            globalRankingHtml += "<table id='ranking'>";
+            globalRankingHtml += "<tr><th>Name</th><th>Score</th></tr>";
+            for (var i = 0; i < globalRanking.length; i++) {
+                globalRankingHtml += "<tr><td>" + globalRanking[i].name + "</td><td>" + globalRanking[i].score + "</td></tr>";
+            }
+            globalRankingHtml += "</table>";
+
+            document.getElementById("globalRanking").innerHTML = globalRankingHtml;
+        }
+
+        function showFriendsRanking() {
+            var friendsRanking = [
+                { name: "James", score: 89 },
+                { name: "Mary", score: 87 },
+                { name: "Robert", score: 85 },
+                { name: "Patricia", score: 83 }
+            ];
+
+            var friendsRankingHtml = "<h2>Friends Ranking</h2>";
+            friendsRankingHtml += "<table id='ranking'>";
+            friendsRankingHtml += "<tr><th>Name</th><th>Score</th></tr>";
+            for (var i = 0; i < friendsRanking.length; i++) {
+                friendsRankingHtml += "<tr><td>" + friendsRanking[i].name + "</td><td>" + friendsRanking[i].score + "</td></tr>";
+            }
+            friendsRankingHtml += "</table>";
+
+            document.getElementById("globalRanking").innerHTML = friendsRankingHtml;
+        }
+
+        showGlobalRanking()
+    </script>
+</body>
+</html>
